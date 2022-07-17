@@ -121,3 +121,62 @@ def greet_user_2(names):
 
 usernames = ['hannah', 'ty', 'margot']
 greet_user_2(usernames)
+
+# 在函数中修改列表
+# 模拟不用函数的代码结构
+unprint_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+# 模拟打印每个设计，知道没有未打印的设计为止
+# 打印每个设计后，都将其移到已完成列表中
+while unprint_designs:
+    current_design = unprint_designs.pop()
+    print(f"Printing model: {current_design}")
+    completed_models.append(current_design)
+
+# 显示已经打印好的所有模型
+print("\nThe following models have been printed:")
+for completed_model in completed_models:
+    print(completed_model)
+
+
+# 将上述内容移动到两个函数中，使其结构更为简洁合理
+def print_models(unprint_designs, completed_models):
+    # def print_models(unprint_designs[:], completed_models): #使用【：】传递使用副本，使其不会清空原始的数据内容
+    while unprint_designs:
+        current_design = unprint_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+
+unprint_designs = ['phone case', 'robot pendant']
+completed_models = []
+
+print_models(unprint_designs, completed_models)
+show_completed_models(completed_models)
+
+
+# 当不知道函数预先要接受多少实参，可以用形参来表示
+def make_pizza(*toppings):
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+# 8-14 汽车 ：编写一个函数，将一辆汽车的信息存储在一个字典中。这个函数总是接受制造商和型号，还接受任意数量的关键字实参。这样调用这个函数：提供必不可少的信息，以及两个名称—值对，如颜色和选装配件。这个函数必须能够像下面这样进行调用：
+def car_info(manufacturer, type, **kwargs):
+    kwargs["manufacturer"] = manufacturer
+    kwargs["type"] = type
+    return kwargs
+
+car = car_info('subaru', 'outback', color = 'blue', tow_package = True)
+print(car)
