@@ -163,13 +163,15 @@ class Battery:
 class ElectricCar(Car):
     """电动车的独特之处"""
 
-    def __int__(self, make, model, year):
+    def __init__(self, make, model, year):
         """初始化父类属性，再初始化电动汽车的独特属性"""
         super().__init__(make, model, year)
-        self.battery = 100
+        # self.battery = 100  #添加新的属性，特有属性
+        self.battery = Battery()    #调用实例
 
 
 my_tesla = ElectricCar('tesla', 'model 3', 2022)
 
 print(my_tesla.get_descriptive_name())
-print(my_tesla.battery) #为什么不行？
+print(my_tesla.battery.battery_size)
+my_tesla.battery.describe_battery()
