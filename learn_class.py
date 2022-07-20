@@ -94,6 +94,8 @@ class Car:
 
 my_new_car = Car('Porsche', 'Panamera', 2022)
 print(my_new_car.get_descriptive_name())
+print(my_new_car.model)
+print(my_new_car.odometer_reading)
 
 my_use_car = Car('Volkswagen', 'beetle', 1938)
 print(my_use_car.get_descriptive_name())
@@ -136,12 +138,38 @@ class User:
         print("You have reset successfully!")
 
 
-my_login = User('shawn')
-while my_login.login_attempts() < 7:
-    my_login.increment_login_attempts()
-    my_login.get_login_times()
-    if my_login.get_login_times() == "error":
-        my_login.reset_login_attempts()
-    else:
-        continue
+# 此段错误，并未实现想要的功能即自动叠加并超出限制后重置
+# my_login = User('shawn')
+# while my_login.login_attempts() < 7:
+#     my_login.increment_login_attempts()
+#     my_login.get_login_times()
+#     if my_login.get_login_times() == "error":
+#         my_login.reset_login_attempts()
+#     else:
+#         continue
 
+# car类
+class Battery:
+    """一次模拟电动汽车电瓶的简单尝试"""
+
+    def __init__(self, battery_size=75):
+        """初始化电瓶的属性"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+
+class ElectricCar(Car):
+    """电动车的独特之处"""
+
+    def __int__(self, make, model, year):
+        """初始化父类属性，再初始化电动汽车的独特属性"""
+        super().__init__(make, model, year)
+        self.battery = 100
+
+
+my_tesla = ElectricCar('tesla', 'model 3', 2022)
+
+print(my_tesla.get_descriptive_name())
+print(my_tesla.battery) #为什么不行？
