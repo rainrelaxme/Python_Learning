@@ -1,4 +1,6 @@
-# 学习类：一种对量和合集，通过此类，可以代表所有的同种对象，并包含共有的信息
+# -*- coding:utf-8 -*-
+# 《python编程：从入门到实践》第9章 类
+# 学习类：一种对象和合集，通过此类，可以代表所有的同种对象，并包含共有的信息
 
 class Dog:
     """一次模拟小狗的简单尝试"""
@@ -167,7 +169,7 @@ class ElectricCar(Car):
         """初始化父类属性，再初始化电动汽车的独特属性"""
         super().__init__(make, model, year)
         # self.battery = 100  #添加新的属性，特有属性
-        self.battery = Battery()    #调用实例
+        self.battery = Battery()  # 调用实例
 
 
 my_tesla = ElectricCar('tesla', 'model 3', 2022)
@@ -175,3 +177,29 @@ my_tesla = ElectricCar('tesla', 'model 3', 2022)
 print(my_tesla.get_descriptive_name())
 print(my_tesla.battery.battery_size)
 my_tesla.battery.describe_battery()
+
+"""
+请创建一个Die 类，它包含一个名为sides 的属性，该属性的默认值为6。编写一个名为roll_die() 的方法，它打印位于1和骰子面数之间的随机数。创建一个6面
+的骰子，再掷10次。 创建一个10面的骰子和一个20面的骰子，并将它们都掷10次。
+"""
+from random import randint
+
+
+class Die:
+    """一个骰子"""
+
+    def __init__(self, sides=6):
+        self.sides = sides
+
+    def roll_die(self):
+        side_name = randint(1, self.sides)
+        return side_name
+
+
+side = input("你的骰子是多少面？")
+my_die_6 = Die(int(side))
+roll_times = 1
+while roll_times <= 10:
+    result = my_die_6.roll_die()
+    print(f"你第{roll_times}次掷骰子的结果是{result}")
+    roll_times += 1

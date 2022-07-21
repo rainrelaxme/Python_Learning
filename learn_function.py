@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# 学习函数，学习手册为《python编程，从入门到实践》
+# 《python编程：从入门到实践》第8章 函数
 
 # 最简单的函数输出
 def greet_user(username):
