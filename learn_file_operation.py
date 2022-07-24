@@ -11,19 +11,19 @@ with open(filename) as file_object:  # open()打开文件
     # with可以在访问文件之后关闭它，也可以用open()和close()，但是只会在close时才关闭，如果调试未执行到close，会导致文件未妥善处理
     # open()仅在with代码块中使用，如果要给别的地方用，存储下来
     contents = file_object.read()
-    print(contents.rstrip())    # .rstrip()用于删除末尾的空白
+    print(contents.rstrip())  # .rstrip()用于删除末尾的空白
 # 打印到一行中
 message_string = ''
-for line in contents:    # 此处已被关闭，无法读取内容，
-    message_string += line.strip()   # 相较rstrip，strip可以去除前面的空格
-m_replace = message_string.replace('i', 'I')    # 并不会真正替换
+for line in contents:  # 此处已被关闭，无法读取内容，
+    message_string += line.strip()  # 相较rstrip，strip可以去除前面的空格
+m_replace = message_string.replace('i', 'I')  # 并不会真正替换
 print(message_string)
 print(m_replace)
-print(len(message_string))   # 长度
+print(len(message_string))  # 长度
 
 new_file = open(filename)
 contents = new_file.read()
-print(contents.rstrip())    # .rstrip()用于删除末尾的空白
+print(contents.rstrip())  # .rstrip()用于删除末尾的空白
 # 打印每一行
 for line in file_object:
     print(line)
@@ -49,3 +49,27 @@ with open(filename2, 'w') as file_object:
 with open(filename2, 'a') as file_object:
     file_object.write("I love programming.\n")
     file_object.write("I love creating new games.\n")
+
+# 异常返回 try-except代码块
+try:
+    print(5 / 0)
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+
+# 除法计算器
+print("Give me two numbers, and I'll divide them.")
+print("Enter 'q' to quit.")
+
+while True:
+    first_number = input("\nFirst number:")
+    if first_number == 'q':
+        break
+    second_number = input('\nSecond number:')
+    if second_number == 'q':
+        break
+    try:
+        answer = int(first_number) / int(second_number)
+    except ZeroDivisionError:
+        print("You can't divide by 0!")
+    else:
+        print(f"Answer is {answer}")
