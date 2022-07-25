@@ -2,6 +2,7 @@
 # 《python编程：从入门到实践》第10章 文件和异常
 # 学习处理文件，并处理异常
 from os import close
+import os
 
 filename = 'test.txt'
 
@@ -73,3 +74,18 @@ while True:
         print("You can't divide by 0!")
     else:
         print(f"Answer is {answer}")
+
+# 分析文本，文本中字数量
+filename3 = 'test.txt'
+
+try:
+    with open(filename3) as file3_object:
+        contents = file3_object.read()
+except FileNotFoundError:
+    msg = "Sorry, the file " + "does not exist."
+    print(msg)
+else:
+    # 计算文件大概包含多少个单词
+    words = contents.split()
+    num_words = len(words)
+    print("The file " + "has about " + str(num_words) + "words.")
