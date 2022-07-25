@@ -1,8 +1,9 @@
-# Python_learning
+# Python-Learning
 learn python record
 
 # 命名规范（公有/外部成员）（私有/内部成员前面加“_”）
-项目（project）             My_project
+项目（project）             My-Project
+文件夹（folder）             my_folder
 模块（module）              my_naming_convention
 包（package）              my_naming_convention
 类（class）                MyNamingConvention
