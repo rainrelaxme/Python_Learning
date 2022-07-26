@@ -82,6 +82,7 @@ try:
     with open(filename3) as file3_object:
         contents = file3_object.read()
 except FileNotFoundError:
+    # pass # 使用pass告诉程序什么都不做，继续向后执行
     msg = "Sorry, the file " + "does not exist."
     print(msg)
 else:
@@ -89,3 +90,22 @@ else:
     words = contents.split()
     num_words = len(words)
     print("The file " + "has about " + str(num_words) + "words.")
+
+
+# 两个数字相加，当录入的是文本时，输出异常
+def add(a='', b=''):
+    """加法计算器"""
+
+    while True:
+        a = input("请输入第一个加数：")
+        if a == 'q':
+            break
+        b = input("请输入第二个加数：")
+        if b == 'q':
+            break
+    sum: int = int(a) + int(b)
+    return sum
+
+while True:
+    print("加法计算器，按'q'退出")
+    input
