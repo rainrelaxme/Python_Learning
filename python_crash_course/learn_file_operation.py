@@ -3,6 +3,7 @@
 # 学习处理文件，并处理异常
 from os import close
 import os
+import json
 
 filename = 'test.txt'
 
@@ -93,19 +94,40 @@ else:
 
 
 # 两个数字相加，当录入的是文本时，输出异常
-def add(a='', b=''):
+def add(a: int, b: int, sum1=None):
     """加法计算器"""
+    try:
+        sum1 = int(a) + int(b)
+    except ValueError:
+        msg = "加数类型错误，请修改后尝试！"
+        print(msg)
+    else:
+        print(f"计算结果是{sum1}")
+    return sum1
 
-    while True:
-        a = input("请输入第一个加数：")
-        if a == 'q':
-            break
-        b = input("请输入第二个加数：")
-        if b == 'q':
-            break
-    sum: int = int(a) + int(b)
-    return sum
 
 while True:
     print("加法计算器，按'q'退出")
-    input
+    a = input("请输入第一个加数：")
+    if a == 'q':
+        break
+    b = input("请输入第二个加数：")
+    if b == 'q':
+        break
+    add(a, b)
+
+# remember_me.py
+# 学习json
+import json
+
+filename4 = 'username.json'
+try:
+    with open(filename4) as f_obj4:
+        username = json.load(f_obj4)
+except FileNotFoundError:
+    username = input("What is your name?")
+    with open(filename4, 'w') as f_obj4:
+        json.dump(username, f_obj4)
+        print("We'll remember you when you come back, " + username + "!")
+else:
+    print(f"Welcome back, {username}!")
