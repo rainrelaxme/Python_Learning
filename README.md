@@ -1,5 +1,5 @@
 # Python-Learning
-*shawn's learn python record*
+*Nutter's learn python record*
 
 ## 命名规范
 （公有/外部成员）（私有/内部成员前面加“_”）

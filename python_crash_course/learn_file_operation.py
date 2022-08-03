@@ -5,7 +5,7 @@ from os import close
 import os
 import json
 
-filename = 'test.txt'
+filename = '../src/test.txt'
 
 # 读取文件
 # 路径，在windows中用反斜杠，在linux和OS x中用斜杠

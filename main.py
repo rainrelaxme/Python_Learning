@@ -1,18 +1,16 @@
-print("Give me two numbers, and I'll divide them.")
-print("Enter 'q' to quit.")
+# -*- coding:utf-8 -*-
+# authority by Nutter
 
-while True:
-    first_number = input("\nFirst number:")
-    if first_number == 'q':
-        break
-    second_number = input('\nSecond number:')
-    if second_number == 'q':
-        break
-    try:
-        answer = int(first_number) / int(second_number)
-    except ZeroDivisionError:
-        print("You can't divide by 0!")
-    else:
-        print(f"Answer is {answer}")
+import sys
+import os
+import unittest
 
+from python_crash_course.name_function import get_formatted_name
+
+# 把当前文件所在文件夹的父文件夹路径加入到PYTHONPATH
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(r"D:\project\python\python-learning\python_crash_course"))))
+
+
+name = get_formatted_name('a', 'b', 'c')
+print(name)
 
