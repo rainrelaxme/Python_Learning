@@ -14,7 +14,7 @@ class Ship():
 
         # 加载飞船图像并获取其外接矩形
         self.image = pygame.image.load(r'images\ship.png')
-        self.image = pygame.transform.scale(self.image, (50, 50))    # 调整图像大小
+        self.image = pygame.transform.scale(self.image, (30, 30))    # 调整图像大小
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
