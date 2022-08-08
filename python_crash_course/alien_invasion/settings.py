@@ -22,3 +22,6 @@ class Settings():
         # 限制最大子弹数量
         self.bullets_allowed = 3
 
+        # 外星人设置
+        self.alien_speed_factor = 1
+
