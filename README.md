@@ -1,5 +1,5 @@
 # Python-Learning
-*Nutter's learn python record*
+*Rainrelaxme's learn python record*
 
 ## 命名规范
 （公有/外部成员）（私有/内部成员前面加“_”）
@@ -20,6 +20,18 @@
 * 先引用标准库
 * 空两行引用自己写的模块
 * 类之间空两行，函数之间空一行，执行空两行
+
+## 启动虚拟环境的方法
+##### 直接启动下层文件夹下的activate文件
+  * linux
+  ```
+  source ll_env/bin/activate
+  ```
+  * windows
+  ```
+  ll_env/Scripts/activate
+  ```
+
 
 ## 测试用例的断言方法有以下几种
 |           方法            |      用途       |
