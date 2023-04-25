@@ -8,7 +8,7 @@
   * Windows：ll_env\Scripts\activate ；
 * 停止使用虚拟环境，可执行命令deactivate
 *  安装django：pip install Django
-* 创建项目 django-admin.exe startproject learing_log .
+* 创建项目 django-admin.exe startproject learing_log .(别忘了最后的“.”)
 * 创建数据库python manage.py migrate:会创建dbsqlite3数据库
 * 查看项目python manage.py runserver <端口号>
 * 创建应用程序：python manage.py startapp learning_logs
