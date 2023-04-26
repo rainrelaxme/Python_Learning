@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 def register(request):
     """Register a new user."""
     if request.method != 'POST':
-        # Display blank registration form.   
+        # Display blank templates form.
         form = UserCreationForm()
     else:
         # Process completed form.
@@ -21,4 +21,4 @@ def register(request):
 
     # Display a blank or invalid form.
     context = {'form': form}
-    return render(request, 'registration/register.html', context)
+    return render(request, 'templates/register.html', context)
