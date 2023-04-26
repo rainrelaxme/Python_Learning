@@ -2,6 +2,8 @@
 使用Django，首先需要建立一个虚拟工作环境。虚拟环境 是系统的一个位置，你可以在其中安装包，并将其与其他Python包隔离。将项目的库与其他项目分离是有益的，且为
 了在第20章将“学习笔记”部署到服务器，这也是必须的。
 
+[数据库文件](https://share.weiyun.com/Ygv9Pv3E)路径：python_crash_course/Web_application/learning_log/db.sqlite3
+
 * 建立虚拟环境：python -m venv ll_env
 * 激活虚拟环境
   * linux：source ll_env/bin/activate ；
